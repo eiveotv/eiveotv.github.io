@@ -16,9 +16,6 @@
       googlePlus: false,
       facebook: false,
       twitter: false,
-      digg: false,
-      delicious: false,
-      stumbleupon: false,
       linkedin: false,
       pinterest: false
     },
@@ -67,21 +64,6 @@
         related: '',
         lang: 'en'
       },
-      digg: { //http://about.digg.com/downloads/button/smart
-        url: '',  //if you need to personalize url button
-        urlCount: false,  //if you want to use personnalize button url on global counter
-        type: 'DiggCompact'
-      },
-      delicious: {
-        url: '',  //if you need to personalize url button
-        urlCount: false,  //if you want to use personnalize button url on global counter
-        size: 'medium' //medium or tall
-      },
-      stumbleupon: {  //http://www.stumbleupon.com/badges/
-        url: '',  //if you need to personalize url button
-        urlCount: false,  //if you want to use personnalize button url on global counter
-        layout: '1'
-      },
       linkedin: {  //http://developer.linkedin.com/plugins/share-button
         url: '',  //if you need to personalize url button
         urlCount: false,  //if you want to use personnalize button url on global counter
@@ -106,10 +88,6 @@
     //facebook : "http://api.ak.facebook.com/restserver.php?v=1.0&method=links.getStats&urls={url}&format=json"
     
     twitter: "http://cdn.api.twitter.com/1/urls/count.json?url={url}&callback=?",
-    digg: "http://services.digg.com/2.0/story.getInfo?links={url}&type=javascript&callback=?",
-    delicious: 'http://feeds.delicious.com/v2/json/urlinfo/data?url={url}&callback=?',
-    //stumbleupon: "http://www.stumbleupon.com/services/1.01/badge.getinfo?url={url}&format=jsonp&callback=?",
-    stumbleupon: "",
     linkedin: "http://www.linkedin.com/countserv/count/share?format=jsonp&url={url}&callback=?",
     pinterest: "http://api.pinterest.com/v1/urls/count.json?url={url}&callback=?"
   },
@@ -149,19 +127,6 @@
         }
       },1000);
     },
-    digg: function(){
-      //if somenone find a solution, mail me !
-      /*$(this.element).find('.digg').on('click', function(){
-        _gaq.push(['_trackSocial', 'digg', 'add']);
-      });*/
-    },
-    delicious: function(){},
-    stumbleupon: function(){},
-    linkedin: function(){
-      function LinkedInShare() {
-        _gaq.push(['_trackSocial', 'linkedin', 'share']);
-      }
-    },
     pinterest: function(){
       //if somenone find a solution, mail me !
     }
@@ -177,15 +142,6 @@
     },
     twitter: function(opt){
       window.open("https://twitter.com/intent/tweet?text="+encodeURIComponent(opt.text)+"&url="+encodeURIComponent((opt.buttons.twitter.url !== '' ? opt.buttons.twitter.url : opt.url))+(opt.buttons.twitter.via !== '' ? '&via='+opt.buttons.twitter.via : ''), "", "toolbar=0, status=0, width=650, height=360");
-    },
-    digg: function(opt){
-      window.open("http://digg.com/tools/diggthis/submit?url="+encodeURIComponent((opt.buttons.digg.url !== '' ? opt.buttons.digg.url : opt.url))+"&title="+opt.text+"&related=true&style=true", "", "toolbar=0, status=0, width=650, height=360");
-    },
-    delicious: function(opt){
-      window.open('http://www.delicious.com/save?v=5&noui&jump=close&url='+encodeURIComponent((opt.buttons.delicious.url !== '' ? opt.buttons.delicious.url : opt.url))+'&title='+opt.text, 'delicious', 'toolbar=no,width=550,height=550');
-    },
-    stumbleupon: function(opt){
-      window.open('http://www.stumbleupon.com/badge/?url='+encodeURIComponent((opt.buttons.delicious.url !== '' ? opt.buttons.delicious.url : opt.url)), 'stumbleupon', 'toolbar=no,width=550,height=550');
     },
     linkedin: function(opt){
       window.open('https://www.linkedin.com/cws/share?url='+encodeURIComponent((opt.buttons.delicious.url !== '' ? opt.buttons.delicious.url : opt.url))+'&token=&isFramed=true', 'linkedin', 'toolbar=no,width=550,height=550');
@@ -386,9 +342,6 @@
         googlePlus: {site: 'Google', action: '+1'},
         facebook: {site: 'facebook', action: 'like'},
         twitter: {site: 'twitter', action: 'tweet'},
-        digg: {site: 'digg', action: 'add'},
-        delicious: {site: 'delicious', action: 'add'},
-        stumbleupon: {site: 'stumbleupon', action: 'add'},
         linkedin: {site: 'linkedin', action: 'share'},
         pinterest: {site: 'pinterest', action: 'pin'}
       };
