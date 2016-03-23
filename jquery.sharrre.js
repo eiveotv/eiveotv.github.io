@@ -89,7 +89,7 @@
     
     twitter: "http://cdn.api.twitter.com/1/urls/count.json?url={url}&callback=?",
     linkedin: "http://www.linkedin.com/countserv/count/share?format=jsonp&url={url}&callback=?",
-    pinterest: "http://api.pinterest.com/v1/urls/count.json?url={url}&callback=?"
+    pinterest: "http://api.pinterest.com/v1/urls/count.json?callback%20&url={url}"
   },
   /* Tracking for Google Analytics
   ================================================== */
