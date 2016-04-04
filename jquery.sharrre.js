@@ -35,7 +35,6 @@
     hide: function(){}, //personalize hide event with this callback function
     click: function(){}, //personalize click event with this callback function
     render: function(){}, //personalize render event with this callback function
-    buttons: {  //settings for buttons
       googlePlus : {  //http://www.google.com/webmasters/+1/button/
         url: '',  //if you need to personnalize button url
         urlCount: false,  //if you want to use personnalize button url on global counter
